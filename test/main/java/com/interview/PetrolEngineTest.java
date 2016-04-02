@@ -23,11 +23,11 @@ public class PetrolEngineTest {
         assertFalse(pe.IsRunning());
     }
 
-    @Test
-    public void getFuelLevel() {
-        PetrolEngine pe = new PetrolEngine();
-        assertEquals(0, pe.GetFuelLevel());
-    }
+//    @Test
+//    public void getFuelLevel() {
+//        PetrolEngine pe = new PetrolEngine();
+//        assertEquals(0, pe.GetFuelLevel());
+//    }
 
     @Test
     public void getBatchSize() {

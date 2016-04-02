@@ -4,7 +4,6 @@ public interface IEngine {
     EngineType GetType();
     FuelType GetFuelType();
     boolean IsRunning();
-    int GetFuelLevel();
     int GetBatchSize();
     double GetBatchCost();
 }

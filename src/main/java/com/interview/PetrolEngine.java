@@ -15,10 +15,6 @@ public class PetrolEngine implements IEngine {
         return false;
     }
 
-    public int GetFuelLevel() {
-        return 0;
-    }
-
     public int GetBatchSize() {
         return 8;
     }
