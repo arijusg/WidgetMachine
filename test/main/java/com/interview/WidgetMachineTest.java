@@ -11,44 +11,42 @@ public class WidgetMachineTest {
     @Mocked
     InternalCombustionEngine engine;
 
+    //Different types of engines will be tested in integration tests
     @Test
-    public void ProduceWidgetsUsingPetrolEngine() {
+    public void engine(@Injectable final IEngine engine1,
+                       @Injectable final IEngineAssembly engineAssembly) {
+
         new Expectations() {{
-            engine.isRunning(); result = true;
-            engine.getFuelType(); result = FuelType.PETROL;
+            engine1.getFuelType();
+            result = FuelType.PETROL;
+            engine1.getBatchSize();
+            result = 8;
+            engine1.getBatchCost();
+            result = 9.00;
+
+            engineAssembly.getEngine();
+            result = engine1;
+            engineAssembly.getIsRunning();
+            result = true;
+            times = 1;
         }};
 
-        WidgetMachine wm = new WidgetMachine();
-        int cost = wm.produceWidgets(10);
+        WidgetMachine wm = new WidgetMachine(engineAssembly);
+        double cost = wm.produceWidgets(10);
+
+        assertEquals(18, cost, 0.01);
 
         new VerificationsInOrder() {{
-            engine.start(); times = 1;
-            engine.isRunning();
-            engine.stop(); times = 1;
+            engineAssembly.fillTank(FuelType.PETROL, 100);
+            times = 1;
+            engineAssembly.start();
+            times = 1;
+            engineAssembly.getIsRunning();
+            times = 1;
+            engineAssembly.stop();
+            times = 1;
         }};
-
-        assertEquals(18, cost);
     }
-
-    @Test
-    public void ProduceWidgetsUsingDieselEngine() {
-        new Expectations() {{
-            engine.isRunning(); result = true;
-            engine.getFuelType(); result = FuelType.DIESEL;
-        }};
-
-        WidgetMachine wm = new WidgetMachine();
-        int cost = wm.produceWidgets(10);
-
-        new VerificationsInOrder() {{
-            engine.start(); times = 1;
-            engine.isRunning();
-            engine.stop(); times = 1;
-        }};
-
-        assertEquals(24, cost);
-    }
-
 
     //Tests:
     //Create widgets using Petrol engine

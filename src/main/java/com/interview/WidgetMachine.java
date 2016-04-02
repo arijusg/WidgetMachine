@@ -3,44 +3,35 @@ package main.java.com.interview;
 public class WidgetMachine {
 
     public WidgetMachine() {
-        engine = new InternalCombustionEngine(FuelType.PETROL);
+        //engine = new InternalCombustionEngine(FuelType.PETROL);
     }
 
-    public WidgetMachine(IEngine engine) {
-        _engine = engine;
+    public WidgetMachine(IEngineAssembly engineAssembly) {
+        _engineAssembly = engineAssembly;
     }
 
-    private IEngine _engine;
+    private IEngineAssembly _engineAssembly;
 
-    private InternalCombustionEngine engine;
+    // private InternalCombustionEngine engine;
 
-    public int produceWidgets(int quantity) {
-        engine.fill(engine.getFuelType(), 100);
-        engine.start();
-        int cost = 0;
-
-        if (engine.isRunning()) {
-            cost = produce(quantity);
-        }
-
-        engine.stop();
-
+    public double produceWidgets(int quantity) {
+        _engineAssembly.fillTank(_engineAssembly.getEngine().getFuelType(), 100);
+        _engineAssembly.start();
+        double cost = 0;
+        if (!_engineAssembly.getIsRunning()) return cost;
+        cost = produce(quantity);
+        _engineAssembly.stop();
         return cost;
     }
 
-    private int produce(int quantity) {
+    private double produce(int quantity) {
+        double costPerBatch = _engineAssembly.getEngine().getBatchCost();
+
         int batch = 0;
         int batchCount = 0;
-        int costPerBatch = 0;
-
-        if (engine.getFuelType() == FuelType.PETROL) {
-            costPerBatch = 9;
-        } else if (engine.getFuelType() == FuelType.DIESEL) {
-            costPerBatch = 12;
-        }
-
+        int batchSize = _engineAssembly.getEngine().getBatchSize();
         while (batch < quantity) {
-            batch = batch + 8;
+            batch = batch + batchSize;
             batchCount++;
         }
 
