@@ -3,19 +3,19 @@ package main.java.com.interview;
 
 public class PetrolEngine implements IEngine {
 
-    public EngineType GetType() {
+    public EngineType getType() {
         return EngineType.InternalCombustion;
     }
 
-    public FuelType GetFuelType() {
+    public FuelType getFuelType() {
         return FuelType.PETROL;
     }
 
-    public int GetBatchSize() {
+    public int getBatchSize() {
         return 8;
     }
 
-    public double GetBatchCost() {
+    public double getBatchCost() {
         return 9.00;
     }
 }

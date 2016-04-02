@@ -8,25 +8,25 @@ public class PetrolEngineTest {
     @Test
     public void getType() {
         PetrolEngine pe = new PetrolEngine();
-        assertEquals(EngineType.InternalCombustion, pe.GetType());
+        assertEquals(EngineType.InternalCombustion, pe.getType());
     }
 
     @Test
     public void getFuelType() {
         PetrolEngine pe = new PetrolEngine();
-        assertEquals(FuelType.PETROL, pe.GetFuelType());
+        assertEquals(FuelType.PETROL, pe.getFuelType());
     }
 
     @Test
     public void getBatchSize() {
         PetrolEngine pe = new PetrolEngine();
-        assertEquals(8, pe.GetBatchSize());
+        assertEquals(8, pe.getBatchSize());
     }
 
     @Test
     public void getBatchCost() {
         PetrolEngine pe = new PetrolEngine();
-        assertEquals(9.00, pe.GetBatchCost(), 0.01);
+        assertEquals(9.00, pe.getBatchCost(), 0.01);
     }
 
 }

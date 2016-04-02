@@ -58,7 +58,7 @@ public class EngineAssemblyTest {
     public void startEngineWithFuel() {
         IEngine engine = new PetrolEngine();
         IEngineAssembly ee = new EngineAssembly(engine);
-        ee.fillTank(engine.GetFuelType(), 100);
+        ee.fillTank(engine.getFuelType(), 100);
         ee.start();
         assertTrue(ee.getIsRunning());
     }
@@ -75,7 +75,7 @@ public class EngineAssemblyTest {
     public void stopEngine() {
         IEngine engine = new PetrolEngine();
         IEngineAssembly ee = new EngineAssembly(engine);
-        ee.fillTank(engine.GetFuelType(), 100);
+        ee.fillTank(engine.getFuelType(), 100);
         ee.start();
         ee.stop();
         assertFalse(ee.getIsRunning());

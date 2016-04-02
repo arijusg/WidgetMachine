@@ -21,7 +21,7 @@ public class EngineAssembly implements IEngineAssembly {
     }
 
     public void fillTank(FuelType fuelType, int quantity) {
-        if (fuelType != _engine.GetFuelType()) throw new WrongFuelException();
+        if (fuelType != _engine.getFuelType()) throw new WrongFuelException();
         if (quantity < 0) throw new QuantityOutOfRangeFuelException();
         if ((_fuelLevel + quantity) > 100) throw new QuantityOutOfRangeFuelException();
         _fuelLevel += quantity;
