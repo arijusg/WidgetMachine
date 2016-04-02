@@ -11,10 +11,6 @@ public class PetrolEngine implements IEngine {
         return FuelType.PETROL;
     }
 
-    public boolean IsRunning() {
-        return false;
-    }
-
     public int GetBatchSize() {
         return 8;
     }

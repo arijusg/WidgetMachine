@@ -18,6 +18,12 @@ public class EngineAssemblyTest {
         IEngineAssembly ee = new EngineAssembly(engine);
         assertEquals(0, ee.getFuelLevel());
     }
+    @Test
+    public void newEngineAssemblyIsNotRunning() {
+        IEngine engine = new PetrolEngine();
+        IEngineAssembly ee = new EngineAssembly(engine);
+        assertFalse(ee.getIsRunning());
+    }
 
     @Test
     public void fillTankWithRightFuel() {
@@ -27,34 +33,52 @@ public class EngineAssemblyTest {
         assertEquals(100, ee.getFuelLevel());
     }
 
-    @Test(expected=WrongFuelException.class)
+    @Test(expected = WrongFuelException.class)
     public void fillTankWithWrongFuel() {
         IEngine engine = new PetrolEngine();
         IEngineAssembly ee = new EngineAssembly(engine);
         ee.fillTank(FuelType.DIESEL, 100);
     }
 
-    @Test(expected=QuantityOutOfRangeFuelException.class)
-    public void OverfillWithFuel() {
+    @Test(expected = QuantityOutOfRangeFuelException.class)
+    public void overfillWithFuel() {
         IEngine engine = new PetrolEngine();
         IEngineAssembly ee = new EngineAssembly(engine);
         ee.fillTank(FuelType.PETROL, 200);
     }
-    @Test(expected=QuantityOutOfRangeFuelException.class)
-    public void LessThanZeroQuantityOfFuelToBeFilled() {
+
+    @Test(expected = QuantityOutOfRangeFuelException.class)
+    public void lessThanZeroQuantityOfFuelToBeFilled() {
         IEngine engine = new PetrolEngine();
         IEngineAssembly ee = new EngineAssembly(engine);
         ee.fillTank(FuelType.PETROL, -30);
     }
 
     @Test
-    public void start() throws Exception {
-
+    public void startEngineWithFuel() {
+        IEngine engine = new PetrolEngine();
+        IEngineAssembly ee = new EngineAssembly(engine);
+        ee.fillTank(engine.GetFuelType(), 100);
+        ee.start();
+        assertTrue(ee.getIsRunning());
     }
 
     @Test
-    public void stop() throws Exception {
+    public void startEngineWithNoFuel() {
+        IEngine engine = new PetrolEngine();
+        IEngineAssembly ee = new EngineAssembly(engine);
+        ee.start();
+        assertFalse(ee.getIsRunning());
+    }
 
+    @Test
+    public void stopEngine() {
+        IEngine engine = new PetrolEngine();
+        IEngineAssembly ee = new EngineAssembly(engine);
+        ee.fillTank(engine.GetFuelType(), 100);
+        ee.start();
+        ee.stop();
+        assertFalse(ee.getIsRunning());
     }
 
 }

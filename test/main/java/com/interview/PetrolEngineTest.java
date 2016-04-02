@@ -18,18 +18,6 @@ public class PetrolEngineTest {
     }
 
     @Test
-    public void isRunning() {
-        PetrolEngine pe = new PetrolEngine();
-        assertFalse(pe.IsRunning());
-    }
-
-//    @Test
-//    public void getFuelLevel() {
-//        PetrolEngine pe = new PetrolEngine();
-//        assertEquals(0, pe.GetFuelLevel());
-//    }
-
-    @Test
     public void getBatchSize() {
         PetrolEngine pe = new PetrolEngine();
         assertEquals(8, pe.GetBatchSize());
