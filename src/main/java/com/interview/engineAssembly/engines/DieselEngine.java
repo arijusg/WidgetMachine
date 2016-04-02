@@ -4,11 +4,11 @@ package main.java.com.interview.engineAssembly.engines;
 public class DieselEngine implements IEngine {
 
     public EngineType getType() {
-        return EngineType.InternalCombustion;
+        return EngineType.INTERNAL_COMBUSTION;
     }
 
     public FuelType getFuelType() {
-        return FuelType.PETROL;
+        return FuelType.DIESEL;
     }
 
     public int getBatchSize() {
@@ -16,6 +16,6 @@ public class DieselEngine implements IEngine {
     }
 
     public double getBatchCost() {
-        return 9.00;
+        return 12.00;
     }
 }

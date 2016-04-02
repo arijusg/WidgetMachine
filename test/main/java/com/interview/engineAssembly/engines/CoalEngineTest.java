@@ -1,8 +1,5 @@
 package main.java.com.interview.engineAssembly.engines;
 
-import main.java.com.interview.engineAssembly.engines.EngineType;
-import main.java.com.interview.engineAssembly.engines.FuelType;
-import main.java.com.interview.engineAssembly.engines.PetrolEngine;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -11,7 +8,7 @@ public class CoalEngineTest {
     @Test
     public void getType() {
         IEngine engine = new CoalEngine();
-        assertEquals(EngineType.Steam, engine.getType());
+        assertEquals(EngineType.STEAM, engine.getType());
     }
 
     @Test
@@ -29,7 +26,7 @@ public class CoalEngineTest {
     @Test
     public void getBatchCost() {
         IEngine engine = new CoalEngine();
-        assertEquals(5.56, engine.getBatchCost(), 0.01);
+        assertEquals(5.65, engine.getBatchCost(), 0.01);
     }
 
 }

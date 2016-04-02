@@ -4,18 +4,18 @@ package main.java.com.interview.engineAssembly.engines;
 public class CoalEngine implements IEngine {
 
     public EngineType getType() {
-        return EngineType.InternalCombustion;
+        return EngineType.STEAM;
     }
 
     public FuelType getFuelType() {
-        return FuelType.PETROL;
+        return FuelType.COAL;
     }
 
     public int getBatchSize() {
-        return 8;
+        return 2;
     }
 
     public double getBatchCost() {
-        return 9.00;
+        return 5.65;
     }
 }

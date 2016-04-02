@@ -4,7 +4,7 @@ package main.java.com.interview.engineAssembly.engines;
 public class PetrolEngine implements IEngine {
 
     public EngineType getType() {
-        return EngineType.InternalCombustion;
+        return EngineType.INTERNAL_COMBUSTION;
     }
 
     public FuelType getFuelType() {
