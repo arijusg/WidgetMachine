@@ -1,4 +1,4 @@
-package com.interview;
+package main.java.com.interview;
 
 public class WidgetMachine {
     private InternalCombustionEngine engine = new InternalCombustionEngine(FuelType.PETROL);
