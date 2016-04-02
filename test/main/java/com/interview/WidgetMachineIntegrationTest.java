@@ -1,6 +1,9 @@
 package main.java.com.interview;
 
 
+import main.java.com.interview.engineAssembly.EngineAssembly;
+import main.java.com.interview.engineAssembly.IEngineAssembly;
+import main.java.com.interview.engineAssembly.engines.*;
 import org.junit.*;
 
 import static org.junit.Assert.*;

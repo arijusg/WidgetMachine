@@ -1,5 +1,12 @@
-package main.java.com.interview;
+package main.java.com.interview.engineAssembly;
 
+import main.java.com.interview.engineAssembly.EngineAssembly;
+import main.java.com.interview.engineAssembly.IEngineAssembly;
+import main.java.com.interview.engineAssembly.QuantityOutOfRangeFuelException;
+import main.java.com.interview.engineAssembly.WrongFuelException;
+import main.java.com.interview.engineAssembly.engines.FuelType;
+import main.java.com.interview.engineAssembly.engines.IEngine;
+import main.java.com.interview.engineAssembly.engines.PetrolEngine;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

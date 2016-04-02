@@ -1,4 +1,4 @@
-package main.java.com.interview;
+package main.java.com.interview.engineAssembly.engines;
 
 public interface IEngine {
     EngineType getType();

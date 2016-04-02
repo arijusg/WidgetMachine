@@ -1,5 +1,9 @@
 package main.java.com.interview;
 
+import main.java.com.interview.engineAssembly.EngineAssembly;
+import main.java.com.interview.engineAssembly.IEngineAssembly;
+import main.java.com.interview.engineAssembly.engines.PetrolEngine;
+
 public class WidgetMachine {
 
     //Default contructor was left with same behaviour due to unclear spec.

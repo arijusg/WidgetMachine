@@ -1,4 +1,7 @@
-package main.java.com.interview;
+package main.java.com.interview.engineAssembly;
+
+import main.java.com.interview.engineAssembly.engines.FuelType;
+import main.java.com.interview.engineAssembly.engines.IEngine;
 
 public class EngineAssembly implements IEngineAssembly {
 

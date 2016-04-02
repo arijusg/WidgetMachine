@@ -1,7 +1,7 @@
-package main.java.com.interview;
+package main.java.com.interview.engineAssembly.engines;
 
 
-public class PetrolEngine implements IEngine {
+public class CoalEngine implements IEngine {
 
     public EngineType getType() {
         return EngineType.InternalCombustion;
