@@ -2,8 +2,9 @@ package main.java.com.interview;
 
 public class WidgetMachine {
 
+    //Default contructor was left with same behaviour due to unclear spec.
     public WidgetMachine() {
-        //engine = new InternalCombustionEngine(FuelType.PETROL);
+        _engineAssembly = new EngineAssembly(new PetrolEngine());
     }
 
     public WidgetMachine(IEngineAssembly engineAssembly) {
@@ -11,8 +12,6 @@ public class WidgetMachine {
     }
 
     private IEngineAssembly _engineAssembly;
-
-    // private InternalCombustionEngine engine;
 
     public double produceWidgets(int quantity) {
         _engineAssembly.fillTank(_engineAssembly.getEngine().getFuelType(), 100);
