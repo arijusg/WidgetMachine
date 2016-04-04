@@ -4,11 +4,13 @@ import com.interview.engineAssembly.IEngineAssembly;
 import com.interview.engineAssembly.engines.FuelType;
 import com.interview.engineAssembly.engines.IEngine;
 import mockit.*;
+import mockit.integration.junit4.JMockit;
 import org.junit.*;
+import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
-
+@RunWith(JMockit.class)
 public class WidgetMachineTest {
 
     //Different types of engines will be tested in integration tests

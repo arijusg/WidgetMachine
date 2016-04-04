@@ -1,9 +1,5 @@
 package com.interview.engineAssembly;
 
-import com.interview.engineAssembly.EngineAssembly;
-import com.interview.engineAssembly.IEngineAssembly;
-import com.interview.engineAssembly.QuantityOutOfRangeFuelException;
-import com.interview.engineAssembly.WrongFuelException;
 import com.interview.engineAssembly.engines.FuelType;
 import com.interview.engineAssembly.engines.IEngine;
 import com.interview.engineAssembly.engines.PetrolEngine;
