@@ -1,8 +1,8 @@
-package main.java.com.interview;
+package com.interview;
 
-import main.java.com.interview.engineAssembly.IEngineAssembly;
-import main.java.com.interview.engineAssembly.engines.FuelType;
-import main.java.com.interview.engineAssembly.engines.IEngine;
+import com.interview.engineAssembly.IEngineAssembly;
+import com.interview.engineAssembly.engines.FuelType;
+import com.interview.engineAssembly.engines.IEngine;
 import mockit.*;
 import org.junit.*;
 

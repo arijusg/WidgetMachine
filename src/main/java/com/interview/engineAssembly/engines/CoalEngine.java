@@ -1,4 +1,4 @@
-package main.java.com.interview.engineAssembly.engines;
+package com.interview.engineAssembly.engines;
 
 
 public class CoalEngine implements IEngine {

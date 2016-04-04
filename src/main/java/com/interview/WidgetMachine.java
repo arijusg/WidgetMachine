@@ -1,8 +1,8 @@
-package main.java.com.interview;
+package com.interview;
 
-import main.java.com.interview.engineAssembly.EngineAssembly;
-import main.java.com.interview.engineAssembly.IEngineAssembly;
-import main.java.com.interview.engineAssembly.engines.PetrolEngine;
+import com.interview.engineAssembly.EngineAssembly;
+import com.interview.engineAssembly.IEngineAssembly;
+import com.interview.engineAssembly.engines.PetrolEngine;
 
 public class WidgetMachine {
 
